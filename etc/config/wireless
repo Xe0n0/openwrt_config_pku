@@ -9,7 +9,6 @@ config wifi-device  radio0
 	list ht_capab	RX-STBC1
 	list ht_capab	DSSS_CCK-40
 	# REMOVE THIS LINE TO ENABLE WIFI:
-	option disabled 1
 
 config wifi-iface
 	option device   radio0
