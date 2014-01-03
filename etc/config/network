@@ -8,7 +8,6 @@ config interface 'loopback'
 config interface 'wan'
 	option ifname 'eth0'
 	option proto 'dhcp'
-	option ip6assign '60'
 
 config 'interface' 'wifi'
         option 'proto'      'static'
