@@ -12,7 +12,8 @@ iptables -t nat -N SHADOWSOCKS
 
 # Ignore your shadowsocks server's addresses
 # It's very IMPORTANT, just be careful.
-iptables -t nat -A SHADOWSOCKS -d 106.186.121.34 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 106.186.114.37 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 108.61.217.229 -j RETURN
 
 # Ignore LANs IP address
 iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/8 -j RETURN
@@ -24,11 +25,16 @@ iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN
 
+
 # Anything else should be redirected to shadowsocks's local port
 iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 8008
 
 # Apply the rules
 iptables -t nat -A PREROUTING -m geoip -p tcp ! --destination-country CN -j SHADOWSOCKS
+iptables -t nat -A PREROUTING -p tcp -d 173.194.127.0/24 -j SHADOWSOCKS
+iptables -t nat -A PREROUTING -p tcp -d 173.230.153.0/24 -j SHADOWSOCKS
+iptables -t nat -A PREROUTING -p tcp -d 173.194.72.0/24 -j SHADOWSOCKS
+iptables -t nat -A PREROUTING -p tcp -d 147.8.2.0/24 -j SHADOWSOCKS
 
 iptables -t nat -A prerouting_rule -i eth0 -p tcp --dport 1723 -j ACCEPT
 iptables        -A input_rule      -i eth0 -p tcp --dport 1723 -j ACCEPT
