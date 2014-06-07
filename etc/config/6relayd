@@ -1,5 +1,5 @@
 config server default
-	option master	wan6
+	option master	wan
 	list network	lan
 	option rd	server
 	option dhcpv6	server
