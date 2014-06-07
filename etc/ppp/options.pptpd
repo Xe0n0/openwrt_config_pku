@@ -18,6 +18,6 @@ refuse-chap
 refuse-mschap
 refuse-eap
 refuse-pap
-ms-dns 172.16.1.1
+#ms-dns 172.16.1.1
 #plugin radius.so
 #radius-config-file /etc/radius.conf
