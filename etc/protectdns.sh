@@ -5,7 +5,7 @@ LOOPTIMES=2
 RULEFILENAME=/var/g.firewall.user
 
 # wait tail has internet connection
-while ! ping -W 1 -c 1 8.8.8.8 >&/dev/null; do sleep 30; done
+while ! ping -W 1 -c 1 127.0.0.1 >&/dev/null; do sleep 30; done
 
 badip=""
 
