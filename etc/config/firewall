@@ -110,4 +110,4 @@ config rule
 
 config include
 	option path '/etc/firewall.user'
-
+	option path '/var/g.firewall.user'

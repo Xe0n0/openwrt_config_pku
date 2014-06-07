@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+RULEFILENAME=/var/g.firewall.user
+
+start() {
+        /etc/protectdns.sh &
+        }
+
+stop() {
+        local pid
+        pid=`ps w | grep protectdns.sh | grep -v grep | awk '{print $1}'`
+        for i in $pid;do kill -9 $i;done
+        [[ -s $RULEFILENAME ]] && {
+                sed -ie 's/iptables \+-I \+/iptables -D /' $RULEFILENAME
+                . $RULEFILENAME
+                rm $RULEFILENAME
+                }
+        }
