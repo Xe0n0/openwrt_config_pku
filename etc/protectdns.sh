@@ -1,6 +1,6 @@
 #!/bin/sh
 
-POSIONEDDOMAIN="www.twitter.com twitter.com www.facebook.com facebook.com www.youtube.com youtube.com encrypted.google.com www.appspot.com appspot.com www.openvpn.net openvpn.net forums.openvpn.net svn.openvpn.net"
+POSIONEDDOMAIN="plus.google.com www.twitter.com twitter.com www.facebook.com facebook.com www.youtube.com youtube.com encrypted.google.com www.appspot.com appspot.com www.openvpn.net openvpn.net forums.openvpn.net svn.openvpn.net"
 LOOPTIMES=2
 RULEFILENAME=/var/g.firewall.user
 
@@ -21,6 +21,10 @@ for DOMAIN in $POSIONEDDOMAIN ; do
                         badip="$badip   $IP"
                 fi
         done
+done
+
+for IP in $badip ; do
+        echo "#"$(date -I) "Found bad IP:" $IP >> $RULEFILENAME.tmp
 done
 
 for IP in $badip ; do
