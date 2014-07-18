@@ -7,14 +7,10 @@ config interface 'loopback'
 
 config interface 'wan'
         option ifname 'eth0'
-        option proto 'dhcp'
-        option ipv6 1
-        option peerdns    '0'
-        option 'dns' '8.8.8.8'
-
-config interface wan6
-        option ifname @wan
-        option proto dhcpv6
+        option proto 'pppoe'
+        option username 010010543826
+        option password 61001084
+        option dns '127.0.0.1'
 
 config 'interface' 'wifi'
         option 'proto'      'static'
