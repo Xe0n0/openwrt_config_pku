@@ -31,6 +31,7 @@ iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 8008
 
 # Apply the rules
 iptables -t nat -A PREROUTING -m geoip -p tcp ! --destination-country CN -j SHADOWSOCKS
+
 iptables -t nat -A PREROUTING -p tcp -d 173.194.127.0/24 -j SHADOWSOCKS
 iptables -t nat -A PREROUTING -p tcp -d 173.230.153.0/24 -j SHADOWSOCKS
 iptables -t nat -A PREROUTING -p tcp -d 173.194.72.0/24 -j SHADOWSOCKS
