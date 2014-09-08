@@ -2,7 +2,7 @@
 
 POSIONEDDOMAIN="plus.google.com www.twitter.com twitter.com www.facebook.com facebook.com www.youtube.com youtube.com encrypted.google.com www.appspot.com appspot.com www.openvpn.net openvpn.net forums.openvpn.net svn.openvpn.net"
 LOOPTIMES=2
-RULEFILENAME=/var/g.firewall.user
+RULEFILENAME=/etc/g.firewall.user
 
 # wait tail has internet connection
 while ! ping -W 1 -c 1 127.0.0.1 >&/dev/null; do sleep 30; done
