@@ -28,9 +28,11 @@ iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN
 
 # Anything else should be redirected to shadowsocks's local port
 iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 8008
+iptables -t nat -A SHADOWSOCKS -p udp -j REDIRECT --to-ports 8009
 
 # Apply the rules
 iptables -t nat -A PREROUTING -m geoip -p tcp ! --destination-country CN -j SHADOWSOCKS
+iptables -t nat -A PREROUTING -m geoip -p udp ! --destination-country CN -j SHADOWSOCKS
 
 iptables -t nat -A PREROUTING -p tcp -d 173.194.127.0/24 -j SHADOWSOCKS
 iptables -t nat -A PREROUTING -p tcp -d 173.230.153.0/24 -j SHADOWSOCKS

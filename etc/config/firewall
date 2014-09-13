@@ -112,4 +112,4 @@ config include
 	option path '/etc/firewall.user'
 
 config include
-	option path '/var/g.firewall.user'
+	option path '/etc/g.firewall.user'
