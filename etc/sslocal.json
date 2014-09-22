@@ -1,7 +1,7 @@
 {
-    "server":"106.186.121.34",
+    "server":"74.207.242.141",
     "server_port":17410,
-    "local_port":8008,
+    "local_port":8009,
     "password":"foobarsocks",
     "timeout":600,
     "method":"aes-128-cfb"

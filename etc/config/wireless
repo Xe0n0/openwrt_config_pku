@@ -15,6 +15,6 @@ config wifi-iface
 	option network  'wifi'
 	option mode     ap
 	option ssid     OpenWrt
-	option encryption psk2
+	option encryption psk
     option key      strongpassword
 
