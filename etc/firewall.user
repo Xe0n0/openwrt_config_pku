@@ -15,6 +15,8 @@ iptables -t nat -N SHADOWSOCKS
 iptables -t nat -A SHADOWSOCKS -d 74.207.242.141 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 54.65.0.0/16 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d icysocks4.mooo.com -j RETURN
+iptables -t nat -A SHADOWSOCKS -d speedtest.tokyo.linode.com -j RETURN
+iptables -t nat -A SHADOWSOCKS -d speedtest.fremont.linode.com -j RETURN
 
 # Ignore LANs IP address
 iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/8 -j RETURN
@@ -33,7 +35,7 @@ iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 12345
 
 # Apply the rules
 iptables -t nat -A PREROUTING -m geoip -p tcp ! --destination-country CN -j SHADOWSOCKS
-#iptables -t nat -A PREROUTING -p tcp -d 173.194.127.0/24 -j SHADOWSOCKS
+iptables -t nat -A PREROUTING -p tcp -d 74.125.31.0/24 -j SHADOWSOCKS
 
 iptables -t nat -A prerouting_rule -i eth0 -p tcp --dport 1723 -j ACCEPT
 iptables        -A input_rule      -i eth0 -p tcp --dport 1723 -j ACCEPT
