@@ -7,9 +7,10 @@ config interface 'loopback'
 
 config interface 'wan'
         option ifname 'eth0'
-        option proto 'pppoe'
-        option username 010010543826
-        option password 61001084
+        option proto 'static'
+        option ipaddr 192.168.10.115
+        option netmask 255.255.255.0
+        option gateway 192.168.10.1
         option dns '127.0.0.1'
 
 config 'interface' 'wifi'

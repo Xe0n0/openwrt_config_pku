@@ -8,9 +8,9 @@ SERVICE_WRITE_PID=1
 SERVICE_DAEMONIZE=1
 
 start() {
-    service_start /usr/bin/ss-redir -c /etc/shadowsocks.json
+    service_start /usr/bin/ss-local -c /etc/sslocal.json
 }
 
 stop() {
-    service_stop /usr/bin/ss-redir
+    service_stop /usr/bin/ss-local
 }
