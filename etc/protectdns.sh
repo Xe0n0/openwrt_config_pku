@@ -1,6 +1,6 @@
 #!/bin/sh
 
-POSIONEDDOMAIN="plus.google.com www.twitter.com twitter.com www.facebook.com facebook.com www.youtube.com youtube.com encrypted.google.com www.appspot.com appspot.com www.openvpn.net openvpn.net forums.openvpn.net svn.openvpn.net"
+POSIONEDDOMAIN="groups.google.com plus.google.com www.twitter.com twitter.com www.facebook.com facebook.com www.youtube.com youtube.com encrypted.google.com www.appspot.com appspot.com www.openvpn.net openvpn.net forums.openvpn.net svn.openvpn.net"
 LOOPTIMES=2
 RULEFILENAME=/etc/g.firewall.user
 

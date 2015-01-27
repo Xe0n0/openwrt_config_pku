@@ -1,0 +1,8 @@
+{
+    "server":"2600:3c01::f03c:91ff:fe70:f27d",
+    "server_port":17410,
+    "local_port":8009,
+    "password":"foobarsocks",
+    "timeout":600,
+    "method":"aes-128-cfb"
+}
